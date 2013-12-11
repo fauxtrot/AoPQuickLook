@@ -45,7 +45,7 @@ namespace AopQuickLook.Models
         private void WaitForTen()
         {
             System.Threading.Thread.Sleep(10);
-            //throw new DivideByZeroException("Hehe... you can do that!");
+            //throw new NotImplementedException();
         }
     }
 }

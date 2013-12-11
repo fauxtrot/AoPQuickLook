@@ -37,8 +37,10 @@ namespace AopQuickLook.Main
         }
         
         #endregion
-       
-        public MainWindowViewModel(ExampleOne exampleOne, ExampleTwo exampletwo,  IEventAggregator eventAggregator)
+
+        #region
+        
+        public MainWindowViewModel(ExampleOne exampleOne, ExampleTwo exampletwo, IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
             this.ExampleOne = exampleOne;
@@ -48,17 +50,21 @@ namespace AopQuickLook.Main
             _eventAggregator.Subscribe(this);
 
         }
+        
+        #endregion
+
+        #region Mapped Actions
 
         public void ExampleOneAction()
         {
-            ExampleOne.DoSomethingInteresting();    
+            ExampleOne.DoSomethingInteresting();
         }
 
         public void ExampleThreeAction()
         {
             ExampleThree.DoSomethingSpooky();
         }
-        
+
         public void ExampleTwoAction()
         {
             ExampleTwo.DoSomethingAwesomer();
@@ -89,14 +95,21 @@ namespace AopQuickLook.Main
             ConsoleOutput = string.Empty;
         }
 
+        #endregion
+        
+        #region IHandle Implementations
         public void Handle(ConsoleMessage message)
         {
             OutputMessage(message.Message);
         }
 
+        #endregion
+
+        #region Helper methods
         private void OutputMessage(string message)
         {
             ConsoleOutput = string.Format("{0}{1}{2}", ConsoleOutput, Environment.NewLine, message);
         }
+        #endregion
     }
 }
