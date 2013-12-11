@@ -29,13 +29,16 @@
             </Grid>
             <Grid Grid.Column="1" Background="LightBlue">
                 <TextBlock>Interception: Castle Windsor</TextBlock>
-                <Button x:Name="ExampleTwoAction"  VerticalAlignment="Center" HorizontalAlignment="Center">Exmaple Two</Button>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button x:Name="ExampleTwoAction">Exmaple Two</Button>
+                    <Button x:Name="ExampleTwoActionError" Margin="0,3,0,0">Exmaple Two Error</Button>
+                </StackPanel>               
             </Grid>
             <Grid Grid.Column="2" Background="MistyRose">
                 <TextBlock>ILWeaving: PostSharp</TextBlock>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button x:Name="ExampleThreeAction"  Grid.Column="2" Margin="0,3,0,0">Exmaple Three</Button>
-                    <Button x:Name="ExapmleThreeActionWithCaching"  Grid.Column="2" Margin="0,3,0,0">See Caching In Action</Button>
+                    <Button x:Name="ExampleThreeAction">Exmaple Three</Button>
+                    <Button x:Name="ExapmleThreeActionWithCaching" Margin="0,3,0,0">See Caching In Action</Button>
                 </StackPanel>
             </Grid>
             

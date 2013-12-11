@@ -21,9 +21,18 @@ namespace AopQuickLook.Models
         {
             _eventing.Publish(new ConsoleMessage
             {
-                Message = "Example Two: I'm going to wait now."
+                Message = "Example Two: Just doing what I do."
             });
            
+        }
+
+        public virtual void DoSomethingWrong()
+        {
+            _eventing.Publish(new ConsoleMessage
+            {
+                Message = "Example Two Doesn't feel so good."
+            });
+
             throw new Exception("I've messed up!");
         }
     }

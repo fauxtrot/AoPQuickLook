@@ -4,17 +4,19 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+using Common.CommonAspects;
 
-[assembly: AssemblyTitle("Common")]
+[assembly: AssemblyTitle("RemoteObjects")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Common")]
+[assembly: AssemblyProduct("RemoteObjects")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-
+//postsharp project global validation
+[assembly: RequireSerializationValidator(AttributeTargetTypes = "RemoteObjects.*")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -22,7 +24,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("156a7432-bec4-42a5-b63a-c592465e3bac")]
+[assembly: Guid("67dd5d4f-9c31-4e5e-ba0e-3b5c3dea5e63")]
 
 // Version information for an assembly consists of the following four values:
 //

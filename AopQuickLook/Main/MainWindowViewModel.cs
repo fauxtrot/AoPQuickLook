@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using AopQuickLook.Models;
 using Caliburn.Micro;
@@ -60,20 +61,27 @@ namespace AopQuickLook.Main
         
         public void ExampleTwoAction()
         {
+            ExampleTwo.DoSomethingAwesomer();
+        }
+
+        public void ExampleTwoActionError()
+        {
             try
             {
-                ExampleTwo.DoSomethingAwesomer();
+                ExampleTwo.DoSomethingWrong();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                OutputMessage(ex.ToString());
                 //handle on global scale.
             }
         }
 
         public void ExapmleThreeActionWithCaching()
         {
-            OutputMessage(ExampleThree.SimulateLongLoad());
+            OutputMessage("Querying server on Mars...");
+            Task<string>.Factory.StartNew(() => ExampleThree.SimulateLongLoad())
+                .ContinueWith(x => OutputMessage(x.Result), TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         public void ClearConsole()
