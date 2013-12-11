@@ -19,5 +19,12 @@ namespace AopQuickLook.Models
         {
             _eventing.Publish(new ConsoleMessage { Message = "Yes, yes, spooky isn't it..." });
         }
+
+        [CachingAspect(TimeSpanFromSeconds = 10)]
+        public string SimulateLongLoad()
+        {
+            System.Threading.Thread.Sleep(3000);
+            return "This took 3 seconds if it's not cached.";
+        }
     }
 }

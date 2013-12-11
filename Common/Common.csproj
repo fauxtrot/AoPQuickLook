@@ -58,8 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonAspects\CachingAspect.cs" />
     <Compile Include="CommonAspects\PropertyInjectionAspect.cs" />
     <Compile Include="Logging\ConsoleMessage.cs" />
+    <Compile Include="CommonAspects\EventingProvider.cs" />
     <Compile Include="Logging\ILoggingService.cs" />
     <Compile Include="Logging\LoggingServiceAspect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

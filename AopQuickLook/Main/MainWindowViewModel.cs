@@ -71,10 +71,24 @@ namespace AopQuickLook.Main
             }
         }
 
+        public void ExapmleThreeActionWithCaching()
+        {
+            OutputMessage(ExampleThree.SimulateLongLoad());
+        }
+
+        public void ClearConsole()
+        {
+            ConsoleOutput = string.Empty;
+        }
 
         public void Handle(ConsoleMessage message)
         {
-            ConsoleOutput = string.Format("{0}{1}{2}", ConsoleOutput, Environment.NewLine, message.Message);
+            OutputMessage(message.Message);
+        }
+
+        private void OutputMessage(string message)
+        {
+            ConsoleOutput = string.Format("{0}{1}{2}", ConsoleOutput, Environment.NewLine, message);
         }
     }
 }

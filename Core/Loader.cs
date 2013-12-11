@@ -8,6 +8,7 @@ using Caliburn.Micro;
 using Castle.Core.Internal;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor.Installer;
+using Common.CommonAspects;
 using Common.Logging;
 using LoggingModule;
 using LoggingModule.Service;

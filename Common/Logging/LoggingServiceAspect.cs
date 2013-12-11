@@ -1,5 +1,5 @@
 ﻿using System;
-using Caliburn.Micro;
+using Common.CommonAspects;
 using PostSharp.Aspects;
 
 namespace Common.Logging
@@ -38,10 +38,5 @@ namespace Common.Logging
                 Message = string.Format("On noes! From Postsharp on Exception of {0}", args.Method.Name)
             });
         }
-    }
-
-    public static class EventingProvider
-    {
-        public static Func<IEventAggregator> EventingFun { get; set; }
     }
 }
