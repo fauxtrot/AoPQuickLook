@@ -9,10 +9,15 @@ using Common.Logging;
 
 namespace AopQuickLook.Models
 {
-    [PropertyInjectionAspect]
+    
     public class ExampleThree
     {
-        public IEventAggregator _eventing { get; set; }
+        public IEventAggregator _eventing
+        {
+            [EventAggregatorInjectorAspect]
+            get; 
+            set;
+        }
         
         [LoggingServiceAspect]
         public void DoSomethingSpooky()

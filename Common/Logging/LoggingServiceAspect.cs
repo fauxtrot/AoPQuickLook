@@ -35,7 +35,8 @@ namespace Common.Logging
         {
             EventingProvider.EventingFun().Publish(new ConsoleMessage
             {
-                Message = string.Format("On noes! From Postsharp on Exception of {0}", args.Method.Name)
+                Message = string.Format("On noes! From Postsharp on Exception of {0}", 
+                args.Method.Name)
             });
         }
     }

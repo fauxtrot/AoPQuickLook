@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonAspects\CachingAspect.cs" />
-    <Compile Include="CommonAspects\PropertyInjectionAspect.cs" />
+    <Compile Include="CommonAspects\EventAggregatorInjectorAspect.cs" />
     <Compile Include="CommonAspects\RequireSerializationValidator.cs" />
     <Compile Include="Logging\ConsoleMessage.cs" />
     <Compile Include="CommonAspects\EventingProvider.cs" />

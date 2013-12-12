@@ -40,7 +40,8 @@ namespace AopQuickLook.Main
 
         #region
         
-        public MainWindowViewModel(ExampleOne exampleOne, ExampleTwo exampletwo, IEventAggregator eventAggregator)
+        public MainWindowViewModel(ExampleOne exampleOne,
+            ExampleTwo exampletwo, IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
             this.ExampleOne = exampleOne;

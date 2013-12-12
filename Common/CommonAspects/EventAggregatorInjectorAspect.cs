@@ -8,26 +8,23 @@ using System.Threading.Tasks;
 using Caliburn.Micro;
 using Common.Logging;
 using PostSharp.Aspects;
+using PostSharp.Aspects.Advices;
 
 namespace Common.CommonAspects
 {
     [Serializable]
-    public class PropertyInjectionAspect : InstanceLevelAspect
+    public class EventAggregatorInjectorAspect : OnMethodBoundaryAspect 
     {
-        public override object CreateInstance(AdviceArgs adviceArgs)
+        public override void OnEntry(MethodExecutionArgs args)
         {
-
-            var instance = adviceArgs.Instance;
+            var instance = args.Instance;
             var eventing = instance.GetType()
                 .GetProperties()
-                .FirstOrDefault(x => x.PropertyType.IsInterface && x.PropertyType == typeof (IEventAggregator));
+                .FirstOrDefault(x => x.PropertyType.IsInterface && x.PropertyType == typeof(IEventAggregator));
             if (eventing != null)
             {
                 eventing.SetValue(instance, EventingProvider.EventingFun());
             }
-            return base.CreateInstance(adviceArgs);
-        }
-
-        
+        }       
     }
 }
