@@ -17,10 +17,10 @@ As I develop this talk, I'll try to introduce more elements. On both sides.
 
 Architectural notes:
 
-WPF - MVVM using Caliburn.Micro
-CastleWindsor for IoC
-PostSharp - IL Code weaver
-WPF Themes to give it a slightly different look.
+* WPF - MVVM using Caliburn.Micro  
+* CastleWindsor for IoC  
+* PostSharp - IL Code weaver  
+* WPF Themes to give it a slightly different look.  
 
 MainView is optimized for being viewed in a projector.
 
